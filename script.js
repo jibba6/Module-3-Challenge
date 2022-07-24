@@ -93,6 +93,7 @@ function generatePassword() {
   var passwordLength = parseInt(prompt("How many characters would you like your password to contain? 8-128 "));
   if (passwordLength < 8 || passwordLength > 128 || Number.isNaN(passwordLength)) {
     alert("Your input was incorrect please make sure your input is a number greater than 8 or less than 128.")
+    return null
   };
   var hasSpecialCharacters = confirm("Click ok to include special characters.");
   var hasNumericCharacters = confirm("Click ok to include numeric characters.");
@@ -100,6 +101,7 @@ function generatePassword() {
   var hasUpperCasedCharacters = confirm("Click ok to include upper cased characters.");
   if (hasSpecialCharacters === false && hasNumericCharacters === false && hasLowerCasedCharacters === false && hasUpperCasedCharacters === false) {
     alert("Please pick at least one type of character.")
+    return null
   };
   var chosenCharacters = [];
   var passwordResults = [];
